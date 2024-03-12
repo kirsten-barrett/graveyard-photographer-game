@@ -1,0 +1,92 @@
+body {
+  background-color: gray;
+}
+
+#gameboard {
+  height: 600px;
+  width: 600px;
+  margin: 60px;
+  position: relative;
+  cursor: crosshair;
+  background-image: url("img/back.jpg");
+}
+
+#object1 {
+  position: absolute;
+  left: 20px;
+  top: 410px;
+  transition: 1s;
+  animation-name: path;
+  animation-duration: 6s;
+  animation-play-state: paused;
+  animation-iteration-count: infinite;
+}
+
+#object1:hover {
+  opacity: .2
+}
+
+#object2 {
+  position: absolute;
+  left: 240px;
+  top: 410px;
+  transition: 1s;
+  animation-name: path;
+  animation-duration: 5s;
+  animation-play-state: paused;
+  animation-iteration-count: infinite;
+}
+
+#object2:hover {
+  opacity: .2;
+}
+
+#object3 {
+  position: absolute;
+  left: 450px;
+  top: 410px;
+  transition: 1s;
+  animation-name: path;
+  animation-duration: 4s;
+  animation-play-state: paused;
+  animation-iteration-count: infinite;
+}
+
+#object3:hover {
+  opacity: .2;
+}
+
+#boxes {
+  position: absolute;
+  width: 580px;
+  left: 10px;
+  top: 400px;
+}
+
+#score {
+  height: 120px;
+  width: 250px;
+  position: fixed;
+  top: 50px;
+  left: 30px;
+  padding: 1px 20px;
+  background-color: lightgray;
+  box-shadow: 10px 10px 10px #222;
+  font-family: helvetica;
+  color: black;
+  font-size: 1em;
+}
+
+@keyframes path {
+  0%   {margin-top: 0px;}
+  10%  {margin-top: 0px;}
+  20%  {margin-top: -120px;}
+  30%  {margin-top: 0px;}
+  40%  {margin-top: 0px;}
+  50%  {margin-top: -0px;}
+  60%  {margin-top: -120px;}
+  70%  {margin-top: -60px;}
+  80%  {margin-top: -60px;}
+  90%  {margin-top: 0px;}
+  100% {margin-top: 0px;}
+}

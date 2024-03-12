@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Photograph the Skeleton</title>
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+  <div id="gameboard" onmousedown="document.getElementById('sound').play();">
+    <audio id="sound"><source src="audio/4.mp3" type="audio/mp3"></audio>
+
+    <img src="img/1.png" id="object1" onmouseover="document.getElementById('sound1').play();" onclick="clickCounter()">
+    <audio id="sound1"><source src="audio/1.mp3" type="audio/mp3"></audio>
+
+    <img src="img/2.png" id="object2" onmouseover="document.getElementById('sound2').play();" onclick="clickCounter()">
+    <audio id="sound2"><source src="audio/2.mp3" type="audio/mp3"></audio>
+
+    <img src="img/3.png" id="object3" onmouseover="document.getElementById('sound3').play();" onclick="clickCounter()">
+    <audio id="sound3"><source src="audio/3.mp3" type="audio/mp3"></audio>
+
+    <img src="img/4.png" id="boxes">
+  </div>
+
+  <div id="score" onmousedown="document.getElementById('sound4').play();" onclick="beginGame()">
+    <audio id="sound4"><source src="audio/soundscape.mp3" type="audio/mp3"></audio>
+    <h3>Photograph the Skeleton! Click HERE to Start.</h3>
+    <h2>REWARD:&nbsp;$<span id="result"></span></h2>
+  </div>
+
+  <script>
+  function beginGame() {
+    localStorage.clear();
+    localStorage.points = 0;
+    document.getElementById("result").innerHTML = localStorage.points;
+    document.getElementById("object1").style.WebkitAnimationPlayState = "running";
+    document.getElementById("object2").style.WebkitAnimationPlayState = "running";
+    document.getElementById("object3").style.WebkitAnimationPlayState = "running";
+  }
+
+  function clickCounter() {
+    localStorage.points = Number(localStorage.points) + 50;
+    document.getElementById("result").innerHTML = localStorage.points;
+
+  }
+
+
+
+
+
+  </script>
+
+</body>
+</html>
